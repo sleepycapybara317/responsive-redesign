@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang = "en">
+    <head>
+        <!-- CSS Bootstrap -->
+        <!-- javascript adapted from https://www.w3schools.com/w3css/w3css_slideshow.asp -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet">
+        <title>CS1300: Responsive Redesign</title>
+    </head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Responsive Redesign</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse text-right" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show"> 
+                    <a class="nav-link" href="#Overview">Overview</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" href="#Original Website">Original Website</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" href="#Problems">Problems</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" href="#Visual Redesign">Visual Redesign</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" href="#Redesigned Website">Redesigned Website</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" href="#Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+<div class="d-flex flex-column">
+    <h1 style="align-self: center;">Responsive Redesign</h1>
+
+    <h2 id="Overview">Overview</h2>
+        <p>
+            While searching for labs to conduct research with at Brown, I noticed 
+            the page for the Labratories for Molecular Medicine is unresponsive, 
+            confusing to use, and ultimately misrepresentative of the 
+            caliber of Brown's facilities. Through this project, I redesign the
+            home page to make it more usable and responsive to different screen 
+            sizes.
+        </p>
+    
+    <h2 id="Original Website">Original Website</h2>
+        <p>
+            The <a href="https://www.brown.edu/Research/Ship_Street/home.php">Labratories 
+                for Molecular Medicine</a> 
+            site informs users of Brown's lab and the 2 research centers within it 
+            (the CCMB and the CGP).
+            Here is a screenshot of the homepage:
+            <br>
+            <br>
+            <img src="original-home.png" alt="original site home screen" style="width: 100%; height: auto; border:2px dotted #000000"}> 
+        </p>
+        
+    <h2 id="Problems">Identifying Usability Problems</h2>
+    To improve the site, I first analyzed the original homepage's usabillity through the lens of 
+    efficiency, learnability, and memorability. 
+
+    <h3>Usability Problems</h3>
+    <ol>
+        <li>The site is completely unresponsive. Its fixed size is too small/big for most screens.</li>
+        <li>The pattern affordance of a main navigation bar is not used.</li>
+            <ul>
+                <li>The site splits main navigation items into 2 groupings (at the top and left side) for no apparent reason.</li>
+                <li>The navigation items lack consistency in capitalization and format (bullets
+                    v.s. items separated by "|")</li>
+            </ul>
+        <li>The navigation items are unclearly labeled.</li>
+            <ul>
+                <li>There is no indication of whether links are external or internal.</li>
+                <li>New users will be confused by links to both "brown home" and "Home."</li>
+                <li>The "private" label makes it unclear which groups of users can access this 
+                    section.</li>
+            </ul>
+        <li>The "brown A to Z" link is broken.</li>
+        <li>The links to CCMB and CGP are in containers that look like buttons, but do 
+            not act as buttons. This is a misleading affordance.</li>
+            <ul>
+                <li>The user must click on an underlined portion to be directed to the center's page.</li>
+                <li>There is no indication these links are external.</li>
+            </ul>
+        <li>The CCMB and CGP links far away and misaligned with the proceeding paragraph,
+            making it unclear they are the centers described in it.</li>
+        <li>Despite its higher heirarchy than the text below it, the 
+            bold subheading "making strides in life sciences..."
+            is smaller than the body.</li>
+        <li>The film reel-styled image on the top of the homepage is only dynamic 
+            after it is clicked on.</li>
+            <ul>
+                <li>Once a user clicks on the image, the remainder of the page dissapears.</li>
+                <li>The user cannot return to the homepage without pressing the browser's back button.</li>
+            </ul>
+        <li>The word "centers" wraps so far to the left that it is disembodied 
+            from the paragraph. 
+        </li>
+      </ol>
+    <h3>Accessibility Problems</h3>
+        <p>
+            <a href="https://wave.webaim.org/">WAVE's</a> assessment of the site was accurate in determining:
+        </p>
+        <ol>
+            <li>Every image lacks alt text.</li>
+            <li>The page has 0 ARIA elements.</li>
+            <li>The site's language is not specified as English.</li>
+            <li>There are errors in the heading structure. It jumps from h1 to h5.</li>
+        </ol>
+        However, while WAVE recognized the menu items are an unordered list, it did not 
+        recognize they are missing nav element labels. The lack of nav labels 
+        makes it hard for assitive technologies to identify the main navigation.
+</div>
+
+<div class="d-flex flex-column">
+    <h2 id="Visual Redesign">Visual Redesign</h2>
+    <p> 
+        Addressing the usability and accesibility problems, I created low-fidelity
+        wireframes, a visual design style guide, and high fidelity prototypes 
+        for 3 screen sizes (mobile, tablet, desktop).
+    </p>
+    <h3>Low-Fidelity Wireframe</h3>
+    <div class="d-flex justify-content-around">
+        <img class="sketches" src="desktop.png" alt="lofi 1: desktop" style="width: 87%; height: auto"> 
+        <img class="sketches" src="tablet.png" alt="lofi 2: tablet" style="width: 65%; height: auto"> 
+        <img class="sketches" src="phone.png" alt="lofi 3: mobile" style="width: 40%; height: auto"> 
+        <div class="d-flex align-self-center">
+            <button class="btn btn-light" onclick="plusDivs(1)"> Next Screen &#10095;</button> 
+        </div>
+    </div>
+
+    <h3>Visual Design Style Guide</h3>
+    <img src="style-guide.png" alt="style guide" style="width: 70%; height: auto"> 
+
+    <h3>High-Fidelity Prototype</h3>
+    <div class="d-flex justify-content-around">
+        <img class="hifi" src="desktop-hifi.png" alt="hifi: desktop" style="width: 87%; height: auto"> 
+        <img class="hifi" src="ipad-hifi.png" alt="hifi: tablet" style="width: 65%; height: auto"> 
+        <img class="hifi" src="phone-hifi.png" alt="hifi: mobile" style="width: 40%; height: auto"> 
+        <div class="d-flex align-self-center">
+            <button class="btn btn-light" onclick="plusDivsHi(1)"> Next Screen &#10095;</button> 
+        </div>
+    </div>
+
+    <h2 id="Redesigned Website">Redesigned Website</h2>
+    After planning my design, I coded up the website using HTML and CSS.
+    <a href="https://github.com/sleepycapybara317/redesigned-biomed/">Here it is!</a>
+
+    <h2 id="Conclusion">Conclusion</h2>
+    As it was my first time creating a responsive webpage from scratch, I learned a lot through this project.
+    After having redesigned a page from start to finish, I am more confident in my web design and development abilities
+    and look forward to sharpening these skills going forward.
+</div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("sketches");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "flex";
+}
+</script>
+
+<script>
+    var slideIndex = 1;
+    showDivsHi(slideIndex);
+    
+    function plusDivsHi(n) {
+      showDivsHi(slideIndex += n);
+    }
+    
+    function showDivsHi(n) {
+      var i;
+      var x = document.getElementsByClassName("hifi");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "flex";
+    }
+    </script>
+
+<script>
+// Jump to anchor
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - 70);
+});
+</script>
+
+<footer class="bg-white text-center">
+
+    <div class="container">
+        <p class="mb-0">
+            <hr></hr>
+            Made with <font color="hotpink">&hearts;</font> in Indiana
+        </p>
+    </div>
+</footer>
+
+<!-- jQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
